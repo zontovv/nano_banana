@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoWombat Doodles Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bg-gradient-to-br from-purple-50 to-blue-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 mb-4">
+                GoWombat Doodles
+            </h1>
+            <p class="text-gray-600 text-lg">
+                Create festive doodles for any occasion! 🎨
+            </p>
+        </header>
+
+        <main>
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+                <form id="doodleForm" class="space-y-6">
+                    <div>
+                        <label for="occasion" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Event or Occasion
+                        </label>
+                        <input 
+                            type="text" 
+                            id="occasion" 
+                            name="occasion"
+                            placeholder="e.g., New Year, День рождения, Різдво..."
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
+                            required
+                            maxlength="500"
+                        >
+                        <p class="mt-2 text-sm text-gray-500">
+                            Enter any event in English, Russian, or Ukrainian
+                        </p>
+                    </div>
+
+                    <div>
+                        <label for="styleHint" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Style Hint (Optional)
+                        </label>
+                        <input 
+                            type="text" 
+                            id="styleHint" 
+                            name="styleHint"
+                            placeholder="e.g., minimalist, colorful, vintage..."
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
+                            maxlength="200"
+                        >
+                    </div>
+
+                    <button 
+                        type="submit"
+                        id="generateBtn"
+                        class="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        Generate Doodle ✨
+                    </button>
+                </form>
+            </div>
+
+            <div id="loadingSection" class="hidden">
+                <div class="bg-white rounded-2xl shadow-xl p-12 text-center">
+                    <div class="inline-block animate-spin rounded-full h-16 w-16 border-4 border-purple-200 border-t-purple-600"></div>
+                    <p class="mt-4 text-lg text-gray-600">Creating your magical doodle...</p>
+                    <p class="mt-2 text-sm text-gray-500">This may take up to 30 seconds</p>
+                </div>
+            </div>
+
+            <div id="resultSection" class="hidden">
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Your GoWombat Doodle</h2>
+                    <div class="border-2 border-gray-200 rounded-lg overflow-hidden mb-6">
+                        <img id="resultImage" src="" alt="Generated Doodle" class="w-full">
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button 
+                            id="downloadBtn"
+                            class="flex-1 bg-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-green-700 transition-colors"
+                        >
+                            Download Image 📥
+                        </button>
+                        <button 
+                            id="newDoodleBtn"
+                            class="flex-1 bg-gray-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-700 transition-colors"
+                        >
+                            Create Another 🎨
+                        </button>
+                    </div>
+                    <div id="generationInfo" class="mt-4 text-sm text-gray-500"></div>
+                </div>
+            </div>
+
+            <div id="errorSection" class="hidden">
+                <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-6">
+                    <h3 class="text-red-800 font-bold mb-2">Oops! Something went wrong</h3>
+                    <p id="errorMessage" class="text-red-600"></p>
+                    <button 
+                        id="retryBtn"
+                        class="mt-4 bg-red-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-700 transition-colors"
+                    >
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="mt-12 text-center text-gray-500 text-sm">
+            <p>© 2025 GoWombat Doodles Generator | Powered by Gemini AI</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

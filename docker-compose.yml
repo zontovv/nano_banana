@@ -1,0 +1,24 @@
+services:
+  backend:
+    build: ./backend
+    container_name: gowombat-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_BASE_URL=${OPENROUTER_BASE_URL:-https://openrouter.ai/api/v1}
+      - GEMINI_MODEL=${GEMINI_MODEL:-google/gemini-2.5-flash-image-preview:free}
+      - DEBUG=${DEBUG:-false}
+    volumes:
+      - ./frontend:/frontend:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  default:
+    name: gowombat-network
