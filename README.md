@@ -58,16 +58,6 @@ open http://localhost:8000
 2. **Add style hints** (optional: "minimalist", "colorful", "vintage")  
 3. **Get your doodle** and download the result!
 
-## 📚 Documentation
-
-| Document | Description |
-|----------|-------------|
-| 📖 **[docs/README.md](docs/README.md)** | Complete project documentation |
-| 🔧 **[docs/API.md](docs/API.md)** | REST API reference |
-| 🚢 **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)** | Deployment guide |
-| 💻 **[docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)** | Developer guide |
-| 🗂️ **[docs/INDEX.md](docs/INDEX.md)** | Documentation navigation |
-
 ## ⚙️ Configuration
 
 Essential variables in `.env`:
