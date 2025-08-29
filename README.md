@@ -103,7 +103,6 @@ pytest tests/
 nano_banana/
 ├── backend/           # Python/FastAPI server
 ├── frontend/          # Web interface  
-├── docs/             # 📚 Complete documentation
 ├── samples/          # 🎭 Demo gallery images
 ├── docker-compose.yml # Docker configuration
 └── .env.example      # Configuration template
@@ -121,12 +120,11 @@ nano_banana/
 ## 🆘 Support
 
 - **Issues**: Create an Issue in the repository
-- **API Documentation**: http://localhost:8000/docs  
-- **Detailed Documentation**: [docs/INDEX.md](docs/INDEX.md)
+- **API Documentation**: http://localhost:8000/docs
 
 ## 📄 License
 
-MIT License - see details in [docs/README.md](docs/README.md)
+MIT License
 
 ---
 
